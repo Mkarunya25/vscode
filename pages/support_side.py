@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 import mysql.connector
 
+
+
+#---------------------Hide default multipage sidebar---------------------------------------------------------------------------
+
+st.markdown("""
+    <style>
+        [data-testid="stSidebarNav"] {display: none;}
+    </style>
+""", unsafe_allow_html=True)
+
+
+
 # ---------------- DATABASE CONNECTION -----------------------------------------------------------------------------------------
 
 db = mysql.connector.connect(
@@ -45,13 +57,3 @@ if st.button("Close the Queries"):
         st.success("✅ Query closed successfully!")
 if st.button("HOME PAGE:"):
     st.switch_page("login_flow.py")
-
-
-
-
-
-
-
-
-
-
