@@ -1,6 +1,19 @@
 import streamlit as st
 import mysql.connector
 
+
+
+# Hide default multipage sidebar
+
+st.markdown("""
+    <style>
+        [data-testid="stSidebarNav"] {display: none;}
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+
 # ---------------- DATABASE CONNECTION ----------------
 
 db = mysql.connector.connect(
