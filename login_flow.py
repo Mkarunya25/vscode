@@ -3,6 +3,17 @@ import mysql.connector
 import hashlib
 import time
 
+#-------------------Hide default multipage sidebar-------------------------------------
+
+st.markdown("""
+    <style>
+        [data-testid="stSidebarNav"] {display: none;}
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+
 # ---------------- DATABASE CONNECTION ----------------------------------------------------------------------------------------------
 db = mysql.connector.connect(
     host="127.0.0.1",
@@ -55,12 +66,6 @@ with tab1:
 
         
 
-    
-
-
-
-
-
 #---------------- LOGIN BUTTON --------------------------------------------------------------------------------------------
 
 with tab2:
@@ -93,8 +98,5 @@ with tab2:
 
             else:
                 st.error("❌ Invalid User ID or Password")
-
-
-
 
 
